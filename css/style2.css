@@ -1,0 +1,32 @@
+.layout{
+    width: 100vh;
+}
+
+#div-general{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+}
+
+.card{
+    height: 20rem;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-form{
+    width: 20rem;
+}
+
+textarea, #titulo{
+    margin: 0.3rem;
+    width: 18rem;
+}
