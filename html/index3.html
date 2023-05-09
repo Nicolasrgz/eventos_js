@@ -10,17 +10,13 @@
 <body>
 <div class="layout">
     <div class="container-form">
-        <form id="formulario" class="form" action="">
-            <div class="input">
+        <form id="formulario">
             <h3>Nueva nota</h3>
             <label for="titulo"></label>
-            <input type="text" name="titulo" id="titulo" placeholder="Titulo">
-            <textarea name="text" id="text" cols="40" rows="5" placeholder="texto"></textarea>
-            </div>
-            <div class="botones-b">
+            <input required="" type="text" name="titulo" id="titulo" placeholder="Titulo">
+            <textarea required="" name="text" id="text" cols="40" rows="5" placeholder="texto"></textarea>
             <input id="guardar" type="submit" value="guardar">
-            <input type="submit" value="borrar">
-            </div>    
+            <input id="borrar" type="submit" value="borrar">  
         </form>
     </div>
     <div id="div-general" class="container-notas">

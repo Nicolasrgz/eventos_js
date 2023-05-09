@@ -10,28 +10,10 @@ const tareas = [
         titulo: 'cocinar',
         texto: 'cocinar antes que llegue la familia',
         realizada: false
-    },
-    {    
-        id: 3 ,
-        titulo: 'comprar mercaderia',
-        texto: 'ir al supermercado y traer lo que haga falta',
-        realizada: false
-    },   
-    {    
-        id: 4 ,
-        titulo: 'hacer la tarea',
-        texto: 'hacer la tarea del cohort o me sacan',
-        realizada: false
     }, 
-    {    
-        id: 5 ,
-        titulo: 'ir al gimnasio',
-        texto: 'ir al gimnasio a las 20:00',
-        realizada: false
-    }, 
-    ]
+]
 
-let idGlobal = tareas[4].id
+let idGlobal = tareas[1].id
 
 let contenedor = document.getElementById("div-general")
 
@@ -39,6 +21,7 @@ function maquetador(objeto) {
    return `<div class="card">
     <h2>${objeto.titulo}</h2>
     <p>${objeto.texto}</p>
+    <button onclick="borrarNota(${objeto.id})">borrar nota</button>
     </div>`
 }
 
@@ -49,4 +32,32 @@ function pintar(lista , ubicacion){
 }
 
 pintar(tareas , contenedor)
+
+function crearNotas(titulo, texto) {
+    return `<div class="card">
+    <h2>${titulo}</h2>
+    <p>${texto}</p>
+    <button onclick="borrarNota(${idGlobal + 1})">borrar nota</button>
+    </div>`
+}
+
+const formulario = document.querySelector("#formulario")
+
+formulario.addEventListener ("submit", (e)=>{
+    e.preventDefault()
+    let titulo = formulario[0].value;
+    let text = formulario[1].value;
+    tareas.push({id: idGlobal + 1,
+         titulo: titulo,
+          texto: text,
+           realizada: false});
+    contenedor.innerHTML = "";
+    pintar(tareas, contenedor);
+})
+
+function borrarNota(id) {
+    tareas = tareas.filter(tarea => tarea.id !== id);
+    contenedor.innerHTML = "";
+    pintar(tareas, contenedor);
+}
 
