@@ -50,17 +50,3 @@ function pintar(lista , ubicacion){
 
 pintar(tareas , contenedor)
 
-let titulo = document.querySelector("#titulo")
-let texto = document.querySelector("#text")
-let guardar = document.querySelector("#guardar")
-
-function agregarNota(titulo, texto) {
-    return `<div class="card">
-    <h2>${titulo}</h2>
-    <p>${texto}</p>
-    </div>`
-}
-
-formulario.addEventListener("submit", (e)=>{
-    e.preventDefault()
-})
